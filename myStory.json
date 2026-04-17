@@ -1,56 +1,87 @@
 {
-    "Title": "Campus Life on the West Side",
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Kresge",
+    "Title": "fill",
+    "Credits": "Other base files created by Adam Smith (amsmith@ucsc.edu). This file and modifications to rules.js by Devin Conley.",
+    "InitialLocation": "Your room",
     "Locations": {
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
+        "Your room": {
+            "Body": "You wake up from your afternoon nap to the ringtone of your laptop from the living room.",
             "Choices": [
                 {
-                    "Text": "South",
-                    "Target": "Porter"
-                }
-            ]
-        },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
-            "Choices": [
-                {
-                    "Text": "North",
-                    "Target": "Kresge"
+                    "Text": "Go check your laptop",
+                    "Target": "Hallway"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Rachel Carson"
+                    "Text": "Closet",
+                    "Target": "Closet"
                 }
             ]
         },
-        "Rachel Carson": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
+        "Your room2": {
+            "Body": "You return to your room. ",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Porter"
+                    "Text": "Go check your laptop",
+                    "Target": "Hallway"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Oakes"
+                    "Text": "Closet",
+                    "Target": "Closet"
                 }
             ]
         },
-        "Oakes": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
+        "Closet": {
+            "Body": "You walk over to your closet and see a panel to a small wall safe behind your rack of clothes.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Rachel Carson"
+                    "Text": "Leave",
+                    "Target": "Your Room2"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Beyond"
+                    "Text": "Closet",
+                    "Target": "Closet"
                 }
             ]
         },
+        "Hallway": {
+            "Body": "As you enter the hallway, you start to hear an unusual amount of noise coming from outside. Your family's gardener isn't expected and there was no notice of a street party.",
+            "Choices": [
+                {
+                    "Text": "Check the backyard",
+                    "Target": "Backyard"
+                },
+                {
+                    "Text": "Continue to the living room",
+                    "Target": "Living room"
+                },
+                {
+                    "Text": "Return to your room",
+                    "Target": "Your room2"
+                }
+            ]
+        },
+        "Living room": {
+            "Body": "You find your laptop on the couch and sit down to see what new messages you've received.",
+            "Choices": [
+                {
+                    "Text": "Open 1 new message from Mom & Dad",
+                    "Target": "Message"
+                }
+            ]
+        },
+        "Message": {
+            "Body": "",
+            "Choices": [
+                {
+                    "Text": "",
+                    "Target": ""
+                },
+                {
+                    "Text": "",
+                    "Target": ""
+                }
+            ]
+        },
+
         "Beyond": {
             "Body": "Grass, don't forget to check for ticks!"
         }
