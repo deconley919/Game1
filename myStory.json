@@ -1,6 +1,6 @@
 {
     "Title": "fill",
-    "Credits": "Other base files created by Adam Smith (amsmith@ucsc.edu). This file and modifications to rules.js by Devin Conley.",
+    "Credits": "by Devin Conley",
     "InitialLocation": "Your room",
     "Locations": {
         "Your room": {
@@ -14,13 +14,15 @@
                     "Text": "Closet",
                     "Target": "Closet"
                 }
-            ]
+            ],
+            "safeCode": false,
+            "bunkerKey": false
         },
         "Your room2": {
-            "Body": "You return to your room. ",
+            "Body": "You return to your room.",
             "Choices": [
                 {
-                    "Text": "Go check your laptop",
+                    "Text": "Go to the living room",
                     "Target": "Hallway"
                 },
                 {
@@ -34,11 +36,14 @@
             "Choices": [
                 {
                     "Text": "Leave",
-                    "Target": "Your Room2"
-                },
+                    "Target": "Your room2"
+                }
+            ],
+            "altChoice": [
                 {
-                    "Text": "Closet",
-                    "Target": "Closet"
+                    "Text": "Enter code",
+                    "Target": "getKey",
+                    "requires": "Message"
                 }
             ]
         },
@@ -69,21 +74,41 @@
             ]
         },
         "Message": {
-            "Body": "",
+            "Body": "'1234'\nThis must be the code to the safe in your closet which holds the key to your family's bunker.",
             "Choices": [
                 {
-                    "Text": "",
-                    "Target": ""
-                },
-                {
-                    "Text": "",
-                    "Target": ""
+                    "Text": "Go back to your room",
+                    "Target": "Your room2"
                 }
             ]
         },
-
-        "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
+        "getKey": {
+            "Body": "The safe clicks as the door unlocks. You open it completely to reveal a thick golden key which you quickly grab.",
+            "Choices": [
+                {
+                    "Text": "Retreat to the hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Backyard": {
+            "Body": "You step outside and see the large concrete structure with a steel door.",
+            "Choices": [
+                {
+                    "Text": "Retreat to the hallway",
+                    "Target": "Hallway"
+                }
+            ],
+            "altChoice": [
+                {
+                    "Text": "Use the key to open the door",
+                    "Target": "End",
+                    "requires": "getKey"
+                }
+            ]
+        },
+        "End": {
+            "Body": "You enter the bunker to hide away from whatever is coming."
         }
     }
 }
